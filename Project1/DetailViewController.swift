@@ -10,11 +10,13 @@ import UIKit
 class DetailViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     var selectedImage: String?
-    
+    var selectedPictureNumber = 0
+    var totalPictures = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = selectedImage
+        title = "Picture \(selectedPictureNumber) of \(totalPictures)"
         
         if let imageToLoad = selectedImage {
             imageView.image  = UIImage(named: imageToLoad)
@@ -31,6 +33,8 @@ class DetailViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnTap = false
     }
+    
+    
     /*
     // MARK: - Navigation
 
